@@ -21,7 +21,7 @@ export default function ExpenseForm(props) {
         event.preventDefault();
         const expenseData = {
             title: enteredTitle,
-            amount: enteredAmount,
+            amount: +enteredAmount,
             date: new Date(enteredDate)
         };
         props.onSaveExpense(expenseData)
@@ -47,6 +47,7 @@ export default function ExpenseForm(props) {
             </div>
         </div>
         <div className="actions">
+            <button className="action" type="button" onClick={props.onCancel}>Cancel</button>
             <button className="action" type="submit">Add Expense</button>
         </div>
       </form>
